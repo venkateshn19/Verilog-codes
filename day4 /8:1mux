@@ -1,0 +1,20 @@
+module mux(i0,i1,s,o);
+input i0,i1;
+input s;
+output o;
+assign o=(~s&i0)|(s&i1);
+endmodule
+
+module emux(i,s,o);
+input [7:0]i;
+input [2:0]s;
+output o;
+wire w1,w2,w3,w4,w5,w6;
+mux m0(i[0],i[1],s[0],w1);
+mux m1(i[2],i[3],s[0],w2);
+mux m2(i[4],i[5],s[0],w3);
+mux m3(i[6],i[7],s[0],w4);
+mux m4(w1,w2,s[1],w5);
+mux m5(w3,w4,s[1],w6);
+mux m6(w5,w6,s[2],o);
+endmodule
