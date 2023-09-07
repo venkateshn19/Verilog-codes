@@ -1,0 +1,12 @@
+module ashok_tb;
+reg [7:0]i;
+reg [2:0]s;
+wire o;
+emux dut(i,s,o);
+initial begin
+       i=8'b10101010;s=3'b110;
+#100   i=8'b10101010;s=3'b101;
+#100   i=8'b10101010;s=3'b111;
+#100   i=8'b10101010;s=3'b100;
+end
+endmodule
