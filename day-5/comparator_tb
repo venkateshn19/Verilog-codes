@@ -1,0 +1,15 @@
+module ashok_tb;
+reg a,b;
+wire e,g,l;
+cmprtr dut(a,b,e,g,l);
+initial begin
+a=0;b=0;
+#100
+a=0;b=1;
+#100
+a=1;b=0;
+#100
+a=1;b=1;
+
+end
+endmodule
