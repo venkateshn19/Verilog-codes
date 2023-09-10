@@ -1,0 +1,12 @@
+module fsa(a,b,c,v,sd,cb);
+input a,b,c,v;
+output sd,cb;
+wire w1,w2,w3,w4,w5;
+xor x1(w1,a,b);
+xor x2(sd,c,w1);
+xor x3(w2,a,v);
+and a1(w3,b,w2);
+xor x4(w4,w1,v);
+and a2(w5,c,w4);
+or r1(cb,w3,w5);
+endmodule
