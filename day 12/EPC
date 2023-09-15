@@ -1,0 +1,17 @@
+module EPC(a,b,c,check);
+input a,b,c;
+output reg check;
+always @(*)
+begin
+case({a,b,c})
+3'b000:check=1;
+3'b001:check=0;
+3'b010:check=0;
+3'b011:check=1;
+3'b100:check=0;
+3'b101:check=1;
+3'b110:check=1;
+3'b111:check=0;
+endcase
+end
+endmodule
