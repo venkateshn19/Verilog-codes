@@ -1,0 +1,17 @@
+module mul_tb;
+reg [1:0]a,b;
+wire [3:0]p;
+mul dut(a,b,p);
+initial
+begin
+{a,b}=4'b0000;
+#100;
+{a,b}=4'b0001;
+#100;
+{a,b}=4'b1010;
+#100;
+{a,b}=4'b1011;
+#100;
+{a,b}=4'b1100;
+end
+endmodule
