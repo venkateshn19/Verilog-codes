@@ -1,0 +1,17 @@
+module ha(c,d,sum,cy);
+input c,d;
+output sum,cy;
+assign sum = c^d;
+assign cy = c&d;
+endmodule
+
+module mul(a,b,p);
+input [1:0]a,b;
+output   [3:0]p;
+wire l,m,n;
+assign l=a[1]&b[0];
+assign m=a[0]&b[1];
+assign p[0]=a[0]&b[0];
+ha h1(l,m,p[1],n);
+ha h2(n,(a[1]&b[1]),p[2],p[3]);
+endmodule
