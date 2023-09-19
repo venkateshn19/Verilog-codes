@@ -1,0 +1,7 @@
+module xcess3(a,b,c,o);
+input a,b,c;
+output [3:1]o;
+assign o[3]=((~a)&(b|c))|(a&((~b)&(~c)));
+assign o[2]=b~^c;
+assign o[1]=~c;
+endmodule
