@@ -1,0 +1,27 @@
+module AS4b(a,b,cin,so,co);
+input [3:0]a,b;
+input cin;
+output [3:0]so;
+output co;
+
+wire w1,w2,w3;
+
+wire v0,v1,v2,v3;
+xor (v0,b[0],cin),
+(v1,b[1],cin),
+(v2,b[2],cin),
+(v3,b[3],cin);
+
+fa f1(a[0],v0,cin,so[0],w1);
+fa f2(a[1],v1,w1,so[1],w2);
+fa f3(a[2],v2,w2,so[2],w3);
+fa f4(a[3],v3,w3,so[3],co);
+
+endmodule
+
+module fa(a,b,c,sum,cy);
+input a,b,c;
+output sum,cy;
+assign sum = a^b^c;
+assign cy = ((a^b)&c) | (a&b);
+endmodule
